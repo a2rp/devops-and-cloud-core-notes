@@ -1,0 +1,73 @@
+/* theme.css */
+/* DevOps and Cloud Core Notes Theme */
+
+:root {
+    /* Base - infrastructure dark */
+    --color-bg: #04070c;
+    --color-surface: #0b1220;
+    --color-surface-2: #111a2a;
+
+    /* Primary - DevOps green */
+    --color-primary: #22c55e;
+    --color-primary-hover: #16a34a;
+
+    /* Accent - cloud blue */
+    --color-accent: #38bdf8;
+
+    /* Text */
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #cbd5f5;
+    --color-text-muted: #94a3b8;
+
+    /* Borders */
+    --color-border: #1f2a44;
+    --color-border-light: #2a3b5f;
+
+    /* Links */
+    --color-link: #22c55e;
+    --color-link-hover: #4ade80;
+
+    /* States */
+    --color-success: #22c55e;
+    --color-error: #ef4444;
+    --color-warning: #f59e0b;
+
+    /* Code blocks - terminal style */
+    --color-code-bg: #020617;
+    --color-code-border: #1e293b;
+
+    /* Shadow */
+    --color-shadow: rgba(0, 0, 0, 0.8);
+}
+
+/* Light Mode */
+
+html[data-theme="light"] {
+    --color-bg: #ffffff;
+    --color-surface: #f6f9ff;
+    --color-surface-2: #edf2ff;
+
+    --color-primary: #16a34a;
+    --color-primary-hover: #15803d;
+
+    --color-accent: #0284c7;
+
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #334155;
+    --color-text-muted: #64748b;
+
+    --color-border: #dbe3f3;
+    --color-border-light: #cbd5e1;
+
+    --color-link: #16a34a;
+    --color-link-hover: #15803d;
+
+    --color-success: #059669;
+    --color-error: #dc2626;
+    --color-warning: #d97706;
+
+    --color-code-bg: #f1f5f9;
+    --color-code-border: #e2e8f0;
+
+    --color-shadow: rgba(15, 23, 42, 0.08);
+}
