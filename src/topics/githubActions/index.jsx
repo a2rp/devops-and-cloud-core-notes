@@ -1,4 +1,4 @@
-// src/topics/githubActions/index.jsx
+﻿// src/topics/githubActions/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -20,7 +20,7 @@ import {
 } from "react-icons/fi";
 
 const GitHubActions = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -447,3 +447,4 @@ env:
 };
 
 export default GitHubActions;
+

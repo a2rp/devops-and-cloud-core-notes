@@ -1,4 +1,4 @@
-// src/topics/hooks/index.jsx
+﻿// src/topics/hooks/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -17,7 +17,7 @@ import {
 } from "react-icons/fi";
 
 const Hooks = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -363,3 +363,4 @@ chmod +x .git/hooks/pre-commit`,
 };
 
 export default Hooks;
+

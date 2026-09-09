@@ -1,4 +1,4 @@
-// src/topics/loadBalancer/index.jsx
+﻿// src/topics/loadBalancer/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -20,7 +20,7 @@ import {
 } from "react-icons/fi";
 
 const LoadBalancer = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -474,3 +474,4 @@ const LoadBalancer = () => {
 };
 
 export default LoadBalancer;
+

@@ -1,4 +1,4 @@
-// src/topics/awsEc2/index.jsx
+﻿// src/topics/awsEc2/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -21,7 +21,7 @@ import {
 } from "react-icons/fi";
 
 const AwsEc2 = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -441,3 +441,4 @@ echo "<h1>Hello from EC2</h1>" > /var/www/html/index.html`,
 };
 
 export default AwsEc2;
+

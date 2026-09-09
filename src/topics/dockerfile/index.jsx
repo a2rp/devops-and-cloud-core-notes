@@ -1,4 +1,4 @@
-// src/topics/dockerfile/index.jsx
+﻿// src/topics/dockerfile/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -18,7 +18,7 @@ import {
 } from "react-icons/fi";
 
 const Dockerfile = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -364,3 +364,4 @@ ENV NODE_ENV=$NODE_ENV
 };
 
 export default Dockerfile;
+

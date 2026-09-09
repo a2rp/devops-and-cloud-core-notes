@@ -1,4 +1,4 @@
-// src/topics/iam/index.jsx
+﻿// src/topics/iam/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -20,7 +20,7 @@ import {
 } from "react-icons/fi";
 
 const Iam = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -434,3 +434,4 @@ const Iam = () => {
 };
 
 export default Iam;
+

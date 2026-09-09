@@ -1,4 +1,4 @@
-// src/topics/nginx/index.jsx
+﻿// src/topics/nginx/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -20,7 +20,7 @@ import {
 } from "react-icons/fi";
 
 const Nginx = () => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const [copiedKey, setCopiedKey] = useState("");
 
     const snippets = useMemo(() => {
@@ -490,3 +490,4 @@ sudo tail -f /var/log/nginx/error.log`,
 };
 
 export default Nginx;
+
