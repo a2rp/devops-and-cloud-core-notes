@@ -23,11 +23,8 @@ export const Styled = {
 
         cursor: pointer;
 
-        transition:
-            transform 140ms ease,
-            opacity 160ms ease,
-            border-color 140ms ease,
-            background-color 140ms ease;
+        transition: opacity 160ms ease, border-color 140ms ease,
+            box-shadow 140ms ease;
 
         svg {
             width: 20px;
@@ -47,17 +44,14 @@ export const Styled = {
         }
 
         &:hover {
-            transform: translateY(-2px) scale(1.02);
             border-color: var(--color-border-light);
             background: color-mix(
                 in srgb,
                 var(--color-primary) 34%,
                 transparent
             );
+            box-shadow: 0 12px 30px var(--color-shadow);
         }
 
-        &:active {
-            transform: translateY(0px) scale(1);
-        }
     `,
 };
