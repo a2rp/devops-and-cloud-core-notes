@@ -1,4 +1,4 @@
-import{c as o,r as n,j as e,u as h,a as g,b as f,d as u,i as l,v as b,k as v,m as j,s as y,p as c,q as w}from"./index-ChJ3UoLf.js";const r={Wrapper:o.div`
+import{c as o,r as a,j as e,e as h,a as m,b as g,k as u,i as l,A as v,y as b,m as f,B as j,C as y,p as k,x as w,q as C}from"./index-J2ZlUx8T.js";const r={Wrapper:o.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
@@ -275,34 +275,45 @@ import{c as o,r as n,j as e,u as h,a as g,b as f,d as u,i as l,v as b,k as v,m a
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `},S=()=>{const[s,d]=n.useState(!0),[m,a]=n.useState(""),x=n.useMemo(()=>[{key:"ff",title:"Fast-forward merge",hint:"No merge commit - just move pointer",code:`# If main has not moved, Git can fast-forward
-git checkout main
-git merge feature/login
+    `},T=()=>{const[t,c]=a.useState(!0),[d,s]=a.useState(""),p=a.useMemo(()=>[{key:"whatIs",title:"What is a container",hint:"Process with isolation",code:`# A container is not a VM
+# It is a process running on your host OS
+# With isolation and limits
 
-# Result: main now points to the same commit as feature/login`},{key:"noff",title:"Merge commit",hint:"Keep branch history visible",code:`# Force a merge commit even if fast-forward is possible
-git checkout main
-git merge --no-ff feature/login
+# View running containers
+docker ps`},{key:"lifecycle",title:"Container lifecycle",hint:"run, stop, start, rm",code:`# Run a container
+docker run --name demo-nginx -p 8080:80 nginx
 
-# Result: a new merge commit with 2 parents`},{key:"conflicts",title:"Merge conflict flow",hint:"Resolve and finish merge",code:`git checkout main
-git merge feature/login
+# Stop and start
+docker stop demo-nginx
+docker start demo-nginx
 
-# If conflict happens
-git status
-# fix files manually
+# Remove (container must be stopped)
+docker rm demo-nginx`},{key:"execLogs",title:"Inspect, logs, exec",hint:"Debug like a pro",code:`# See logs
+docker logs demo-nginx
 
-git add .
-git commit
+# Enter container shell
+docker exec -it demo-nginx sh
 
-# If you want to cancel merge
-git merge --abort`},{key:"squash",title:"Squash merge",hint:"Make one commit out of many",code:`# Combine feature branch changes into 1 commit on main
-git checkout main
-git merge --squash feature/login
-git commit -m "Login feature"
+# Inspect config
+docker inspect demo-nginx | head`},{key:"resources",title:"Resource limits",hint:"CPU and memory limits",code:`# Limit CPU and memory
+docker run --name limited   --cpus="0.5"   --memory="256m"   -p 8081:80 nginx`},{key:"volumes",title:"Volumes",hint:"Persist data outside container",code:`# Named volume
+docker volume create app-data
 
-# Note: This is not a real merge commit`},{key:"prMethods",title:"PR merge methods concept",hint:"GitHub merge options",code:`# Merge commit - keeps all commits, adds merge commit
-# Squash and merge - makes 1 commit on main
-# Rebase and merge - replays commits, no merge commit`},{key:"recover",title:"Undo a bad merge",hint:"Two common ways",code:`# If merge not pushed and you want to discard it
-git reset --hard ORIG_HEAD
+docker run --name demo-db   -v app-data:/var/lib/data   alpine sh -c "echo hello > /var/lib/data/file.txt && sleep 9999"
 
-# If merge was pushed, use revert (safe)
-git revert -m 1 <merge-commit-hash>`}],[]),p=async(i,t)=>{try{await navigator.clipboard.writeText(i),a(t),window.setTimeout(()=>a(""),900)}catch{a("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>d(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"Merge",e.jsx(r.Badge,{children:"Combine branches safely"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:s?e.jsx(g,{}):e.jsx(f,{})})]}),!s&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Merge combines histories. It keeps the story of how branches actually happened."}),e.jsx(r.PreviewLine,{children:"Learn fast-forward, merge commits, squash merge, conflicts, and safe undo."})]}),s&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(u,{}),e.jsx("h3",{children:"What merge does"})]}),e.jsx(r.Para,{children:"Merge combines changes from one branch into another. You usually merge a feature branch into main. Git tries to bring both histories together without losing commits."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:'Merge is like saying "take everything from feature branch and add it into main". Sometimes it just moves the pointer, sometimes it creates a special merge commit.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Fast-forward vs merge commit"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Fast-forward merge"})," - main did not move, so Git just moves main pointer forward"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Merge commit"})," - both branches moved, so Git creates a new commit that has two parents"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Simple example"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Main is at commit A"}),e.jsx("li",{children:"Feature branch adds commits B and C"}),e.jsx("li",{children:"If main stayed at A, merge can fast-forward to C"}),e.jsx("li",{children:"If main also got commits, Git creates a merge commit"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Merge strategies you will see"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Default merge"})," - Git decides fast-forward or merge commit based on history"]}),e.jsxs("li",{children:[e.jsx("b",{children:"--no-ff"})," - always create a merge commit (makes branch boundaries visible)"]}),e.jsxs("li",{children:[e.jsx("b",{children:"--squash"})," - combine all feature commits into one commit on main (not a real merge commit)"]})]}),e.jsxs(r.Warn,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Squash merge note"}),e.jsx(r.WarnText,{children:"Squash makes history clean, but it loses individual commit history from the feature branch on main. Great for small features. Not great if you need detailed commit trail."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"GitHub PR merge methods"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Merge commit"})," - keeps all commits and adds a merge commit"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Squash and merge"})," - makes one commit on main"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Rebase and merge"})," - replays commits, no merge commit, history is linear"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Quick selection rule"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Use merge commit when you want to preserve branch context"}),e.jsx("li",{children:"Use squash when you want one clean commit per PR"}),e.jsx("li",{children:"Use rebase and merge when team prefers linear history"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(c,{}),e.jsx("h3",{children:"Merge conflicts - what and why"})]}),e.jsx(r.Para,{children:"A merge conflict happens when Git cannot automatically combine changes. Usually both branches edited the same lines in the same file. Git stops and asks you to decide the final content."}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Conflict handling flow"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Run merge"}),e.jsx("li",{children:"Git shows conflicted files"}),e.jsx("li",{children:"Edit files to correct final version"}),e.jsx("li",{children:"git add ."}),e.jsx("li",{children:"git commit to finish merge"})]})]}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Helpful tip"}),e.jsx(r.NoteText,{children:"Use git status to see exactly which files are conflicted. Solve one file at a time. Keep changes small."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(c,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:x.map(i=>{const t=m===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>p(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(l,{}):e.jsx(w,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"Merge is the safest default for teams because it does not rewrite history. Rebase is cleaner, but merge is honest."})]})]})};export{S as default};
+# Data stays even if container is removed`},{key:"networks",title:"Networking basics",hint:"Container to container communication",code:`# Create a user network
+docker network create app-net
+
+# Run two containers on same network
+docker run -d --name api --network app-net nginx
+docker run -it --rm --network app-net alpine sh
+
+# From alpine shell you can hit:
+# wget -qO- http://api`},{key:"cleanup",title:"Cleanup commands",hint:"Remove unused stuff safely",code:`# Remove stopped containers
+docker container prune
+
+# Remove unused images
+docker image prune
+
+# Remove unused networks
+docker network prune`}],[]),x=async(i,n)=>{try{await navigator.clipboard.writeText(i),s(n),window.setTimeout(()=>s(""),900)}catch{s("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>c(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"Containers",e.jsx(r.Badge,{children:"Isolation without a VM"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:t?e.jsx(m,{}):e.jsx(g,{})})]}),!t&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Containers are lightweight isolated environments for running apps."}),e.jsx(r.PreviewLine,{children:"They are processes with isolation and resource limits, not full virtual machines."})]}),t&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(u,{}),e.jsx("h3",{children:"What is a container"})]}),e.jsx(r.Para,{children:"A container is a process running on your host operating system, but it feels like its own small machine. It gets isolation for filesystem, network, and process view. It can also have CPU and memory limits."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"A container is like a sandbox for an app. Same host kernel, but separated view and controlled resources."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Why containers are fast"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"No full OS per app"})," - containers share the host kernel"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Small images"})," - ship only what app needs"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Quick start"})," - starting a process is faster than booting a VM"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"VM vs container (simple)"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"VM - includes full guest OS, slower boot, heavier"}),e.jsx("li",{children:"Container - uses host OS kernel, fast start, lighter"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Isolation basics"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Process isolation"})," - container sees its own processes"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Filesystem isolation"})," - container gets its own file tree"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Network isolation"})," - container has its own network namespace"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Resource limits"})," - container can be limited to specific CPU and RAM"]})]}),e.jsxs(r.Warn,{children:[e.jsx(f,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Security note"}),e.jsx(r.WarnText,{children:"Containers are not perfect security boundaries like VMs. Use least privilege, avoid running as root, and keep images minimal."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(j,{}),e.jsx("h3",{children:"Data persistence - volumes"})]}),e.jsx(r.Para,{children:"Containers are designed to be disposable. If you remove a container, its internal writable layer is gone. For data you want to keep, use volumes."}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Volume concept"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Without volume - data disappears when container is deleted"}),e.jsx("li",{children:"With volume - data stays on host-managed storage"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Networking - how containers talk"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Port mapping"})," - expose container port to host, example -p 8080:80"]}),e.jsxs("li",{children:[e.jsx("b",{children:"User networks"})," - containers can resolve each other by name"]}),e.jsxs("li",{children:[e.jsx("b",{children:"DNS inside Docker"})," - container name becomes hostname on the same network"]})]}),e.jsxs(r.Note,{children:[e.jsx(k,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Common beginner confusion"}),e.jsx(r.NoteText,{children:'"localhost" inside a container means the container itself, not your host machine.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(w,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:p.map(i=>{const n=d===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>x(i.code,i.key),title:n?"Copied":"Copy",children:[n?e.jsx(l,{}):e.jsx(C,{}),n?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"Think of containers as a repeatable runtime package. If your app runs in a container, it becomes much easier to deploy the same way everywhere."})]})]})};export{T as default};

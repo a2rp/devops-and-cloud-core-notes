@@ -1,4 +1,4 @@
-import{c as o,r as a,j as e,e as h,a as m,b as g,k as u,i as l,A as v,y as b,m as f,B as j,C as y,p as k,x as w,q as C}from"./index-ChJ3UoLf.js";const r={Wrapper:o.div`
+import{c as o,r as s,j as e,C as g,a as m,b as u,E as b,i as c,n as v,m as l,e as k,G as f,p as j,y as w,x as y,q as S}from"./index-J2ZlUx8T.js";const r={Wrapper:o.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
@@ -275,45 +275,44 @@ import{c as o,r as a,j as e,e as h,a as m,b as g,k as u,i as l,A as v,y as b,m a
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `},T=()=>{const[t,c]=a.useState(!0),[d,s]=a.useState(""),p=a.useMemo(()=>[{key:"whatIs",title:"What is a container",hint:"Process with isolation",code:`# A container is not a VM
-# It is a process running on your host OS
-# With isolation and limits
+    `},C=()=>{const[i,d]=s.useState(!0),[p,a]=s.useState(""),x=s.useMemo(()=>[{key:"ports",title:"Ports and port mapping",hint:"Host port to container port",code:`# Run nginx in container and expose to host
+docker run --name web -p 8080:80 nginx
 
-# View running containers
-docker ps`},{key:"lifecycle",title:"Container lifecycle",hint:"run, stop, start, rm",code:`# Run a container
-docker run --name demo-nginx -p 8080:80 nginx
+# Now open in browser
+# http://localhost:8080
 
-# Stop and start
-docker stop demo-nginx
-docker start demo-nginx
+# Format:
+# -p <hostPort>:<containerPort>`},{key:"bridge",title:"Bridge network",hint:"Default Docker network type",code:`# See Docker networks
+docker network ls
 
-# Remove (container must be stopped)
-docker rm demo-nginx`},{key:"execLogs",title:"Inspect, logs, exec",hint:"Debug like a pro",code:`# See logs
-docker logs demo-nginx
+# Inspect default bridge
+docker network inspect bridge | head`},{key:"userNet",title:"User defined network",hint:"Best for multi containers",code:`docker network create app-net
 
-# Enter container shell
-docker exec -it demo-nginx sh
-
-# Inspect config
-docker inspect demo-nginx | head`},{key:"resources",title:"Resource limits",hint:"CPU and memory limits",code:`# Limit CPU and memory
-docker run --name limited   --cpus="0.5"   --memory="256m"   -p 8081:80 nginx`},{key:"volumes",title:"Volumes",hint:"Persist data outside container",code:`# Named volume
-docker volume create app-data
-
-docker run --name demo-db   -v app-data:/var/lib/data   alpine sh -c "echo hello > /var/lib/data/file.txt && sleep 9999"
-
-# Data stays even if container is removed`},{key:"networks",title:"Networking basics",hint:"Container to container communication",code:`# Create a user network
-docker network create app-net
-
-# Run two containers on same network
 docker run -d --name api --network app-net nginx
+docker run -d --name web --network app-net nginx
+
+# Containers on same user network can reach by name:
+# http://api
+# http://web`},{key:"dns",title:"DNS inside containers",hint:"Name becomes hostname",code:`# Start a shell container on the same network
 docker run -it --rm --network app-net alpine sh
 
-# From alpine shell you can hit:
-# wget -qO- http://api`},{key:"cleanup",title:"Cleanup commands",hint:"Remove unused stuff safely",code:`# Remove stopped containers
-docker container prune
+# Inside shell, resolve name:
+# ping api
+# wget -qO- http://api`},{key:"localhostTrap",title:"The localhost confusion",hint:"Inside container, localhost is the container",code:`# Inside container:
+# localhost means the container itself, not your host
 
-# Remove unused images
-docker image prune
+# To reach host from container (Docker Desktop):
+# host.docker.internal
 
-# Remove unused networks
-docker network prune`}],[]),x=async(i,n)=>{try{await navigator.clipboard.writeText(i),s(n),window.setTimeout(()=>s(""),900)}catch{s("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>c(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"Containers",e.jsx(r.Badge,{children:"Isolation without a VM"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:t?e.jsx(m,{}):e.jsx(g,{})})]}),!t&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Containers are lightweight isolated environments for running apps."}),e.jsx(r.PreviewLine,{children:"They are processes with isolation and resource limits, not full virtual machines."})]}),t&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(u,{}),e.jsx("h3",{children:"What is a container"})]}),e.jsx(r.Para,{children:"A container is a process running on your host operating system, but it feels like its own small machine. It gets isolation for filesystem, network, and process view. It can also have CPU and memory limits."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"A container is like a sandbox for an app. Same host kernel, but separated view and controlled resources."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Why containers are fast"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"No full OS per app"})," - containers share the host kernel"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Small images"})," - ship only what app needs"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Quick start"})," - starting a process is faster than booting a VM"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"VM vs container (simple)"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"VM - includes full guest OS, slower boot, heavier"}),e.jsx("li",{children:"Container - uses host OS kernel, fast start, lighter"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Isolation basics"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Process isolation"})," - container sees its own processes"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Filesystem isolation"})," - container gets its own file tree"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Network isolation"})," - container has its own network namespace"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Resource limits"})," - container can be limited to specific CPU and RAM"]})]}),e.jsxs(r.Warn,{children:[e.jsx(f,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Security note"}),e.jsx(r.WarnText,{children:"Containers are not perfect security boundaries like VMs. Use least privilege, avoid running as root, and keep images minimal."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(j,{}),e.jsx("h3",{children:"Data persistence - volumes"})]}),e.jsx(r.Para,{children:"Containers are designed to be disposable. If you remove a container, its internal writable layer is gone. For data you want to keep, use volumes."}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Volume concept"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Without volume - data disappears when container is deleted"}),e.jsx("li",{children:"With volume - data stays on host-managed storage"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Networking - how containers talk"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Port mapping"})," - expose container port to host, example -p 8080:80"]}),e.jsxs("li",{children:[e.jsx("b",{children:"User networks"})," - containers can resolve each other by name"]}),e.jsxs("li",{children:[e.jsx("b",{children:"DNS inside Docker"})," - container name becomes hostname on the same network"]})]}),e.jsxs(r.Note,{children:[e.jsx(k,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Common beginner confusion"}),e.jsx(r.NoteText,{children:'"localhost" inside a container means the container itself, not your host machine.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(w,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:p.map(i=>{const n=d===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>x(i.code,i.key),title:n?"Copied":"Copy",children:[n?e.jsx(l,{}):e.jsx(C,{}),n?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"Think of containers as a repeatable runtime package. If your app runs in a container, it becomes much easier to deploy the same way everywhere."})]})]})};export{T as default};
+# Example inside container:
+# curl http://host.docker.internal:5173`},{key:"inspect",title:"Inspect IP and networks",hint:"Find container IP quickly",code:`# Container IP address
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api
+
+# View all networks attached
+docker inspect api | head`},{key:"curlTools",title:"Useful network tools",hint:"Quick debugging commands",code:`# Host machine tools
+curl -I http://localhost:8080
+ping 8.8.8.8
+nslookup google.com
+
+# In linux containers you may need:
+# apk add curl bind-tools iputils`}],[]),h=async(n,t)=>{try{await navigator.clipboard.writeText(n),a(t),window.setTimeout(()=>a(""),900)}catch{a("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>d(n=>!n),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(g,{}),"Networking",e.jsx(r.Badge,{children:"Ports - DNS - container links"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:i?e.jsx(m,{}):e.jsx(u,{})})]}),!i&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Networking is where most Docker confusion happens."}),e.jsx(r.PreviewLine,{children:"Learn ports, bridge networks, container to container communication, and DNS."})]}),i&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Networking basics in containers"})]}),e.jsx(r.Para,{children:"Containers have their own network namespace. That means they get their own IP address, routing table, and ports. Docker then connects containers using networks (bridge, host, overlay)."}),e.jsxs(r.Note,{children:[e.jsx(c,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"Each container is like a small computer on a private network. Docker is the router that connects them."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Ports and port mapping"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Container port"})," - port used inside container"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Host port"})," - port on your laptop or server"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Port mapping"})," - connects host port to container port"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Example"}),e.jsx(r.Para,{children:'If nginx listens on port 80 inside container, and you want to access it from host on 8080, you do "-p 8080:80".'})]}),e.jsxs(r.Warn,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Common beginner mistake"}),e.jsx(r.WarnText,{children:'EXPOSE in Dockerfile does not publish ports. It is only documentation. You still need "-p" while running.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Bridge network vs user defined network"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"bridge"})," - default network, basic isolation"]}),e.jsxs("li",{children:[e.jsx("b",{children:"user defined network"})," - recommended for multi-container apps"]}),e.jsx("li",{children:"user networks provide automatic DNS resolution by container name"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Why user network is better"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:'Containers can reach each other by name like "api"'}),e.jsx("li",{children:"More predictable networking for microservices"}),e.jsx("li",{children:"Easier debugging and separation"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"Container to container communication"})]}),e.jsx(r.Para,{children:'If two containers are on the same Docker network, they can talk to each other using container name as hostname. Example: web container can call api container using "http://api".'}),e.jsxs(r.Note,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Port mapping not needed internally"}),e.jsx(r.NoteText,{children:"Containers talking to each other on the same network use container ports directly. Port mapping is mainly for host to container access."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(w,{}),e.jsx("h3",{children:"The localhost confusion"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:'Inside a container, "localhost" means the container itself'}),e.jsx("li",{children:"Your host machine is a different network namespace"}),e.jsx("li",{children:'On Docker Desktop, use "host.docker.internal" to reach host'})]}),e.jsxs(r.Warn,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Typical bug"}),e.jsx(r.WarnText,{children:'App inside container tries to call "http://localhost:5000" but backend is running on host. Fix: use "http://host.docker.internal:5000" (Docker Desktop) or run both containers on same network.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:x.map(n=>{const t=p===n.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:n.title}),e.jsx(r.SnippetHint,{children:n.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>h(n.code,n.key),title:t?"Copied":"Copy",children:[t?e.jsx(c,{}):e.jsx(S,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:n.code})})]},n.key)})})]}),e.jsx(r.FooterNote,{children:"In container networking, always ask two questions: where is the process running and which network namespace is calling it. Once you answer that, ports and hostnames become obvious."})]})]})};export{C as default};

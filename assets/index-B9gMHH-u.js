@@ -1,4 +1,4 @@
-import{c as o,r as s,j as e,C as g,a as m,b as u,E as b,i as c,n as v,m as l,e as k,G as f,p as j,y as w,x as y,q as S}from"./index-ChJ3UoLf.js";const r={Wrapper:o.div`
+import{c as o,r as a,j as e,H as h,a as u,b as g,t as m,i as l,I as v,m as b,k as y,d as f,p as j,y as k,f as C,x as S,q as w}from"./index-J2ZlUx8T.js";const r={Wrapper:o.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
@@ -275,44 +275,42 @@ import{c as o,r as s,j as e,C as g,a as m,b as u,E as b,i as c,n as v,m as l,e a
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `},C=()=>{const[i,d]=s.useState(!0),[p,a]=s.useState(""),x=s.useMemo(()=>[{key:"ports",title:"Ports and port mapping",hint:"Host port to container port",code:`# Run nginx in container and expose to host
-docker run --name web -p 8080:80 nginx
+    `},z=()=>{const[s,c]=a.useState(!0),[d,n]=a.useState(""),p=a.useMemo(()=>[{key:"pipelineStages",title:"Typical pipeline stages",hint:"Concept only",code:`# CI and CD pipeline usually looks like:
 
-# Now open in browser
-# http://localhost:8080
+# 1) Checkout code
+# 2) Install dependencies
+# 3) Lint and typecheck
+# 4) Run tests
+# 5) Build artifacts
+# 6) Security scans (optional but common)
+# 7) Deploy to staging
+# 8) Smoke tests
+# 9) Deploy to production`},{key:"buildArtifact",title:"Build artifacts idea",hint:"What CD deploys",code:`# Artifact is the output of build stage
+# Examples:
+# - dist folder for React apps
+# - Docker image tag like myapp:1.2.0
+# - compiled binary for Go or Rust
+# - zip package for serverless functions`},{key:"rollback",title:"Rollback idea",hint:"Production safety",code:`# A good CD setup supports rollback
+# Examples:
+# - deploy previous Docker image tag
+# - switch load balancer traffic to old version
+# - revert release in Kubernetes
+# - redeploy previous build artifact`},{key:"envs",title:"Environments",hint:"dev, staging, prod",code:`# Common flow:
+# dev - local machine
+# staging - production like testing environment
+# prod - real users
 
-# Format:
-# -p <hostPort>:<containerPort>`},{key:"bridge",title:"Bridge network",hint:"Default Docker network type",code:`# See Docker networks
-docker network ls
+# Good practice:
+# same build artifact should go through staging then prod`},{key:"secrets",title:"Secrets handling",hint:"Never hardcode",code:`# Secrets belong in CI secret store
+# Examples:
+# - API keys
+# - deploy tokens
+# - cloud credentials
 
-# Inspect default bridge
-docker network inspect bridge | head`},{key:"userNet",title:"User defined network",hint:"Best for multi containers",code:`docker network create app-net
-
-docker run -d --name api --network app-net nginx
-docker run -d --name web --network app-net nginx
-
-# Containers on same user network can reach by name:
-# http://api
-# http://web`},{key:"dns",title:"DNS inside containers",hint:"Name becomes hostname",code:`# Start a shell container on the same network
-docker run -it --rm --network app-net alpine sh
-
-# Inside shell, resolve name:
-# ping api
-# wget -qO- http://api`},{key:"localhostTrap",title:"The localhost confusion",hint:"Inside container, localhost is the container",code:`# Inside container:
-# localhost means the container itself, not your host
-
-# To reach host from container (Docker Desktop):
-# host.docker.internal
-
-# Example inside container:
-# curl http://host.docker.internal:5173`},{key:"inspect",title:"Inspect IP and networks",hint:"Find container IP quickly",code:`# Container IP address
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api
-
-# View all networks attached
-docker inspect api | head`},{key:"curlTools",title:"Useful network tools",hint:"Quick debugging commands",code:`# Host machine tools
-curl -I http://localhost:8080
-ping 8.8.8.8
-nslookup google.com
-
-# In linux containers you may need:
-# apk add curl bind-tools iputils`}],[]),h=async(n,t)=>{try{await navigator.clipboard.writeText(n),a(t),window.setTimeout(()=>a(""),900)}catch{a("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>d(n=>!n),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(g,{}),"Networking",e.jsx(r.Badge,{children:"Ports - DNS - container links"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:i?e.jsx(m,{}):e.jsx(u,{})})]}),!i&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Networking is where most Docker confusion happens."}),e.jsx(r.PreviewLine,{children:"Learn ports, bridge networks, container to container communication, and DNS."})]}),i&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Networking basics in containers"})]}),e.jsx(r.Para,{children:"Containers have their own network namespace. That means they get their own IP address, routing table, and ports. Docker then connects containers using networks (bridge, host, overlay)."}),e.jsxs(r.Note,{children:[e.jsx(c,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"Each container is like a small computer on a private network. Docker is the router that connects them."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Ports and port mapping"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Container port"})," - port used inside container"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Host port"})," - port on your laptop or server"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Port mapping"})," - connects host port to container port"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Example"}),e.jsx(r.Para,{children:'If nginx listens on port 80 inside container, and you want to access it from host on 8080, you do "-p 8080:80".'})]}),e.jsxs(r.Warn,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Common beginner mistake"}),e.jsx(r.WarnText,{children:'EXPOSE in Dockerfile does not publish ports. It is only documentation. You still need "-p" while running.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Bridge network vs user defined network"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"bridge"})," - default network, basic isolation"]}),e.jsxs("li",{children:[e.jsx("b",{children:"user defined network"})," - recommended for multi-container apps"]}),e.jsx("li",{children:"user networks provide automatic DNS resolution by container name"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Why user network is better"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:'Containers can reach each other by name like "api"'}),e.jsx("li",{children:"More predictable networking for microservices"}),e.jsx("li",{children:"Easier debugging and separation"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"Container to container communication"})]}),e.jsx(r.Para,{children:'If two containers are on the same Docker network, they can talk to each other using container name as hostname. Example: web container can call api container using "http://api".'}),e.jsxs(r.Note,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Port mapping not needed internally"}),e.jsx(r.NoteText,{children:"Containers talking to each other on the same network use container ports directly. Port mapping is mainly for host to container access."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(w,{}),e.jsx("h3",{children:"The localhost confusion"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:'Inside a container, "localhost" means the container itself'}),e.jsx("li",{children:"Your host machine is a different network namespace"}),e.jsx("li",{children:'On Docker Desktop, use "host.docker.internal" to reach host'})]}),e.jsxs(r.Warn,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Typical bug"}),e.jsx(r.WarnText,{children:'App inside container tries to call "http://localhost:5000" but backend is running on host. Fix: use "http://host.docker.internal:5000" (Docker Desktop) or run both containers on same network.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:x.map(n=>{const t=p===n.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:n.title}),e.jsx(r.SnippetHint,{children:n.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>h(n.code,n.key),title:t?"Copied":"Copy",children:[t?e.jsx(c,{}):e.jsx(S,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:n.code})})]},n.key)})})]}),e.jsx(r.FooterNote,{children:"In container networking, always ask two questions: where is the process running and which network namespace is calling it. Once you answer that, ports and hostnames become obvious."})]})]})};export{C as default};
+# Never commit secrets in code or .env in repo`},{key:"qualityGates",title:"Quality gates",hint:"Block bad builds",code:`# Quality gates are rules that must pass
+# Examples:
+# - lint must pass
+# - tests must pass
+# - coverage minimum
+# - security scan no high vulnerabilities
+# - formatting check`}],[]),x=async(i,t)=>{try{await navigator.clipboard.writeText(i),n(t),window.setTimeout(()=>n(""),900)}catch{n("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>c(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"CI CD",e.jsx(r.Badge,{children:"Automation from commit to deploy"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:s?e.jsx(u,{}):e.jsx(g,{})})]}),!s&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"CI builds and tests your code automatically. CD deploys it automatically."}),e.jsx(r.PreviewLine,{children:"Learn pipeline stages, artifacts, environments, and safe deployment habits."})]}),s&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(m,{}),e.jsx("h3",{children:"What is CI"})]}),e.jsx(r.Para,{children:"CI means Continuous Integration. Every time code is pushed, an automated pipeline runs to make sure the code is healthy. Typical CI jobs are linting, tests, type checks, and build."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"CI is like an automatic reviewer. It runs the same checks every time so humans do not miss mistakes."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"What is CD"})]}),e.jsx(r.Para,{children:"CD usually means Continuous Delivery or Continuous Deployment. Both automate the deployment steps, but the difference is who clicks the final button."}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Continuous Delivery"})," - deployment is always ready, but production release may need manual approval"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Continuous Deployment"})," - every successful pipeline automatically goes to production"]})]}),e.jsxs(r.Warn,{children:[e.jsx(b,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Real world note"}),e.jsx(r.WarnText,{children:"Many teams start with Continuous Delivery and add approvals for production. Fully automatic production is possible, but requires strong testing and monitoring."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Pipeline stages (typical)"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Checkout code"}),e.jsx("li",{children:"Install dependencies"}),e.jsx("li",{children:"Lint and formatting checks"}),e.jsx("li",{children:"Run tests"}),e.jsx("li",{children:"Build artifacts"}),e.jsx("li",{children:"Deploy to staging"}),e.jsx("li",{children:"Smoke test"}),e.jsx("li",{children:"Deploy to production"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Smoke test meaning"}),e.jsx(r.Para,{children:"A smoke test is a quick check to ensure the deployment is not totally broken. Example: call health endpoint and check status 200."})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"Branch strategy example"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"PR to main triggers CI only"}),e.jsx("li",{children:"Merge to main triggers CI and deploy to staging"}),e.jsx("li",{children:"Tag a release triggers production deployment"})]}),e.jsxs(r.Note,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Why tags are useful"}),e.jsx(r.NoteText,{children:"A tag is a stable point in history. Production deployments often use tags so you can identify exactly what version is running."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Secrets and configuration"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Secrets should be stored in CI secret manager"}),e.jsx("li",{children:"Never commit credentials in repository"}),e.jsx("li",{children:"Use environment based configuration - staging and production"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Common secrets"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"AWS access keys"}),e.jsx("li",{children:"GitHub deploy tokens"}),e.jsx("li",{children:"Docker registry credentials"}),e.jsx("li",{children:"Database connection strings"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(C,{}),e.jsx("h3",{children:"Monitoring and rollback"})]}),e.jsx(r.Para,{children:"CD without monitoring is risky. After deployment, you should track errors, latency, and traffic. Rollback should be fast and predictable."}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Keep previous artifacts available"}),e.jsx("li",{children:"Use health checks"}),e.jsx("li",{children:"Enable fast rollback path"}),e.jsx("li",{children:"Prefer gradual rollout for big changes"})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(S,{}),e.jsx("h3",{children:"Cheat sheet playground"})]}),e.jsx(r.SnippetGrid,{children:p.map(i=>{const t=d===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>x(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(l,{}):e.jsx(w,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"CI catches mistakes early. CD makes releases repeatable. Together they reduce manual work and increase reliability."})]})]})};export{z as default};

@@ -1,10 +1,10 @@
-import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p as f,t as j,D as y,x as k,q as C}from"./index-ChJ3UoLf.js";const r={Wrapper:i.div`
+import{c as r,r as n,j as e,p as h,a as m,b as g,t as f,i as c,w as u,x as v,m as b,y as k,z as j,q as y}from"./index-J2ZlUx8T.js";const o={Wrapper:r.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
         background: var(--color-surface);
         overflow: hidden;
-    `,Header:i.div`
+    `,Header:r.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -22,7 +22,7 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             outline: 2px solid var(--color-primary);
             outline-offset: 3px;
         }
-    `,Title:i.div`
+    `,Title:r.div`
         display: flex;
         align-items: center;
         gap: 10px;
@@ -34,7 +34,7 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             font-size: 20px;
             color: var(--color-primary);
         }
-    `,Badge:i.span`
+    `,Badge:r.span`
         margin-left: 10px;
         font-size: 12px;
         font-weight: 800;
@@ -43,15 +43,15 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
         border: 1px solid var(--color-border);
         padding: 4px 10px;
         border-radius: 999px;
-    `,Toggle:i.div`
+    `,Toggle:r.div`
         font-size: 20px;
         color: var(--color-text-muted);
         flex: 0 0 auto;
-    `,Preview:i.div`
+    `,Preview:r.div`
         padding: 14px 18px 18px 18px;
         border-top: 1px solid var(--color-border);
         background: color-mix(in srgb, var(--color-surface-2) 55%, transparent);
-    `,PreviewLine:i.div`
+    `,PreviewLine:r.div`
         color: var(--color-text-secondary);
         font-size: 14px;
         line-height: 1.5;
@@ -59,15 +59,15 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
         & + & {
             margin-top: 6px;
         }
-    `,Content:i.div`
+    `,Content:r.div`
         padding: 18px;
         border-top: 1px solid var(--color-border);
         background: var(--color-surface-2);
-    `,Section:i.div`
+    `,Section:r.div`
         & + & {
             margin-top: 16px;
         }
-    `,SectionHead:i.div`
+    `,SectionHead:r.div`
         display: flex;
         align-items: center;
         gap: 10px;
@@ -83,12 +83,12 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             font-weight: 900;
             color: var(--color-text-primary);
         }
-    `,Para:i.p`
+    `,Para:r.p`
         margin-bottom: 10px;
         color: var(--color-text-secondary);
         font-size: 14px;
         line-height: 1.6;
-    `,Bullets:i.ul`
+    `,Bullets:r.ul`
         padding-left: 0;
         margin: 0;
 
@@ -114,18 +114,18 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             color: var(--color-text-primary);
             font-weight: 900;
         }
-    `,Example:i.div`
+    `,Example:r.div`
         margin-top: 10px;
         border: 1px solid var(--color-border);
         background: color-mix(in srgb, var(--color-surface) 75%, transparent);
         border-radius: 12px;
         padding: 12px;
-    `,ExampleTitle:i.div`
+    `,ExampleTitle:r.div`
         font-weight: 900;
         font-size: 13px;
         color: var(--color-text-primary);
         margin-bottom: 8px;
-    `,CodeBlock:i.div`
+    `,CodeBlock:r.div`
         background: var(--color-code-bg);
         border: 1px solid var(--color-code-border);
         border-radius: 12px;
@@ -139,7 +139,7 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             line-height: 1.55;
             color: var(--color-text-primary);
         }
-    `,Note:i.div`
+    `,Note:r.div`
         display: flex;
         gap: 10px;
         align-items: flex-start;
@@ -159,16 +159,16 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             font-size: 18px;
             flex: 0 0 auto;
         }
-    `,NoteTitle:i.div`
+    `,NoteTitle:r.div`
         font-weight: 900;
         color: var(--color-text-primary);
         font-size: 13px;
         margin-bottom: 2px;
-    `,NoteText:i.div`
+    `,NoteText:r.div`
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `,Warn:i.div`
+    `,Warn:r.div`
         display: flex;
         gap: 10px;
         align-items: flex-start;
@@ -188,21 +188,21 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             font-size: 18px;
             flex: 0 0 auto;
         }
-    `,WarnTitle:i.div`
+    `,WarnTitle:r.div`
         font-weight: 900;
         color: var(--color-text-primary);
         font-size: 13px;
         margin-bottom: 2px;
-    `,WarnText:i.div`
+    `,WarnText:r.div`
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `,SnippetGrid:i.div`
+    `,SnippetGrid:r.div`
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 12px;
         margin-top: 10px;
-    `,SnippetCard:i.div`
+    `,SnippetCard:r.div`
         border: 1px solid var(--color-border);
         background: var(--color-surface);
         border-radius: 12px;
@@ -215,7 +215,7 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
             transform: translateY(-2px);
             border-color: var(--color-border-light);
         }
-    `,SnippetTop:i.div`
+    `,SnippetTop:r.div`
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -223,16 +223,16 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
         padding: 12px;
         border-bottom: 1px solid var(--color-border);
         background: color-mix(in srgb, var(--color-surface-2) 55%, transparent);
-    `,SnippetTitle:i.div`
+    `,SnippetTitle:r.div`
         font-weight: 900;
         color: var(--color-text-primary);
         font-size: 13px;
         line-height: 1.3;
         margin-bottom: 4px;
-    `,SnippetHint:i.div`
+    `,SnippetHint:r.div`
         color: var(--color-text-muted);
         font-size: 12px;
-    `,CopyBtn:i.button`
+    `,CopyBtn:r.button`
         display: inline-flex;
         align-items: center;
         gap: 8px;
@@ -266,7 +266,7 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
         &:active {
             transform: translateY(0px);
         }
-    `,FooterNote:i.div`
+    `,FooterNote:r.div`
         margin-top: 14px;
         padding: 12px;
         border: 1px solid var(--color-border);
@@ -275,56 +275,69 @@ import{c as i,r as a,j as e,z as h,a as g,b as m,e as u,i as l,k as b,m as v,p a
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `},T=()=>{const[t,d]=a.useState(!0),[c,s]=a.useState(""),p=a.useMemo(()=>[{key:"simpleNode",title:"Simple Node app Dockerfile",hint:"Good beginner start",code:`# Dockerfile
+    `},S=()=>{const[s,l]=n.useState(!0),[d,a]=n.useState(""),p=n.useMemo(()=>[{key:"where",title:"Where hooks live",hint:".git folder local hooks",code:`# Git hooks exist inside your repo folder
+# Path:
+.git/hooks
 
-FROM node:20-alpine
+# List sample hooks
+ls .git/hooks`},{key:"precommitSimple",title:"Simple pre-commit hook",hint:"Block commits if checks fail",code:`# Create file:
+# .git/hooks/pre-commit
 
-WORKDIR /app
+#!/bin/sh
+echo "Running pre-commit checks"
 
-COPY package*.json ./
-RUN npm ci
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "Lint failed - commit blocked"
+  exit 1
+fi
 
-COPY . .
+npm test
+if [ $? -ne 0 ]; then
+  echo "Tests failed - commit blocked"
+  exit 1
+fi
 
-EXPOSE 5173
+exit 0`},{key:"chmod",title:"Make hook executable",hint:"Important step",code:"chmod +x .git/hooks/pre-commit"},{key:"prepush",title:"Simple pre-push hook",hint:"Run tests before pushing",code:`# Create file:
+# .git/hooks/pre-push
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]`},{key:"prodNode",title:"Production Node build",hint:"Build once, run light",code:`# Dockerfile (production style)
+#!/bin/sh
+echo "Running pre-push checks"
 
-FROM node:20-alpine AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
+npm test
+if [ $? -ne 0 ]; then
+  echo "Tests failed - push blocked"
+  exit 1
+fi
 
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]`},{key:"dockerIgnore",title:".dockerignore example",hint:"Smaller builds, faster",code:`# .dockerignore
+exit 0`},{key:"commitmsg",title:"commit-msg hook",hint:"Enforce message format",code:`# Create file:
+# .git/hooks/commit-msg
 
-node_modules
-dist
-.git
-.vscode
-.env
-npm-debug.log`},{key:"buildRun",title:"Build and run commands",hint:"Use these every time",code:`# Build image
-docker build -t my-app:1.0 .
+#!/bin/sh
+MSG_FILE="$1"
+MSG="$(cat "$MSG_FILE")"
 
-# Run container
-docker run --name my-app -p 8080:80 my-app:1.0
+# Example rule: minimum 10 chars
+if [ "$(printf "%s" "$MSG" | wc -c)" -lt 10 ]; then
+  echo "Commit message too short - add more detail"
+  exit 1
+fi
 
-# See logs
-docker logs my-app`},{key:"cmdEntry",title:"CMD vs ENTRYPOINT",hint:"Common interview question",code:`# CMD sets default command
-CMD ["node", "server.js"]
+exit 0`},{key:"security",title:"Basic secret check idea",hint:"Block accidental key commits",code:`# Very simple check idea (not perfect)
+# Look for common key patterns before commit
 
-# ENTRYPOINT makes container behave like a fixed executable
-ENTRYPOINT ["node", "server.js"]
+git diff --cached | grep -E "AKIA|BEGIN PRIVATE KEY|SECRET_KEY" >/dev/null
+if [ $? -eq 0 ]; then
+  echo "Possible secret detected in staged changes - commit blocked"
+  exit 1
+fi
 
-# If you use both, ENTRYPOINT is fixed and CMD becomes default args`},{key:"env",title:"ENV and ARG",hint:"Build time vs runtime",code:`# Build time variable
-ARG NODE_ENV=production
+exit 0`},{key:"share",title:"Sharing hooks with team",hint:".git/hooks not versioned",code:`# .git/hooks is not committed to git
+# Team friendly approach:
+# 1) keep hooks in a folder, example:
+#    scripts/hooks/pre-commit
+# 2) copy/install them during setup
 
-# Runtime variable
-ENV NODE_ENV=$NODE_ENV
-
-# Use:
-# docker build --build-arg NODE_ENV=production -t app .`}],[]),x=async(o,n)=>{try{await navigator.clipboard.writeText(o),s(n),window.setTimeout(()=>s(""),900)}catch{s("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>d(o=>!o),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"Dockerfile",e.jsx(r.Badge,{children:"Build images the right way"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:t?e.jsx(g,{}):e.jsx(m,{})})]}),!t&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"A Dockerfile is a step-by-step recipe to build a Docker image."}),e.jsx(r.PreviewLine,{children:"Learn layers, caching, COPY vs ADD, CMD vs ENTRYPOINT, and multi-stage builds."})]}),t&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(u,{}),e.jsx("h3",{children:"What is a Dockerfile"})]}),e.jsx(r.Para,{children:"A Dockerfile is a text file that contains instructions to build a Docker image. Each instruction creates a layer. Docker caches layers, so rebuilds can be fast when written correctly."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"Dockerfile is like a cooking recipe. Image is the prepared dish. Container is the dish being served and running."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Layers and caching"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Each line"})," in Dockerfile becomes a layer"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Docker caches"})," layers if inputs did not change"]}),e.jsxs("li",{children:["Put ",e.jsx("b",{children:"stable steps first"})," to reuse cache"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Best practice example"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Copy package.json first"}),e.jsx("li",{children:"Install dependencies"}),e.jsx("li",{children:"Copy remaining files"})]})]}),e.jsxs(r.Warn,{children:[e.jsx(v,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Common beginner mistake"}),e.jsx(r.WarnText,{children:"If you copy the full project before installing dependencies, any file change breaks cache and makes builds slow."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"Important instructions"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"FROM"})," - base image, example node:20-alpine"]}),e.jsxs("li",{children:[e.jsx("b",{children:"WORKDIR"})," - sets working directory inside image"]}),e.jsxs("li",{children:[e.jsx("b",{children:"COPY"})," - copies files into image (use this most of the time)"]}),e.jsxs("li",{children:[e.jsx("b",{children:"RUN"})," - runs commands during build time"]}),e.jsxs("li",{children:[e.jsx("b",{children:"EXPOSE"})," - documents the port (does not publish port by itself)"]}),e.jsxs("li",{children:[e.jsx("b",{children:"CMD"})," - default command to run when container starts"]}),e.jsxs("li",{children:[e.jsx("b",{children:"ENTRYPOINT"})," - fixed executable behavior"]})]}),e.jsxs(r.Note,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"COPY vs ADD"}),e.jsx(r.NoteText,{children:"Use COPY. ADD has extra features (like auto extracting archives) and is rarely needed."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Multi-stage builds"})]}),e.jsx(r.Para,{children:"Multi-stage builds let you build your app in one stage and copy only the final output into a smaller runtime image. This keeps production images small and safer."}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Why it matters"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Smaller image size"}),e.jsx("li",{children:"Faster deploy and pull"}),e.jsx("li",{children:"Less attack surface"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:p.map(o=>{const n=c===o.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:o.title}),e.jsx(r.SnippetHint,{children:o.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>x(o.code,o.key),title:n?"Copied":"Copy",children:[n?e.jsx(l,{}):e.jsx(C,{}),n?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:o.code})})]},o.key)})})]}),e.jsx(r.FooterNote,{children:"Write Dockerfiles like you write clean code. Good ordering gives fast builds. Multi-stage gives small and secure production images."})]})]})};export{T as default};
+# Example install script idea:
+cp scripts/hooks/pre-commit .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit`}],[]),x=async(i,t)=>{try{await navigator.clipboard.writeText(i),a(t),window.setTimeout(()=>a(""),900)}catch{a("")}};return e.jsxs(o.Wrapper,{children:[e.jsxs(o.Header,{onClick:()=>l(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(o.Title,{children:[e.jsx(h,{}),"Hooks",e.jsx(o.Badge,{children:"Automate checks in Git flow"})]}),e.jsx(o.Toggle,{"aria-hidden":"true",children:s?e.jsx(m,{}):e.jsx(g,{})})]}),!s&&e.jsxs(o.Preview,{children:[e.jsx(o.PreviewLine,{children:"Git hooks are scripts that run automatically on events like commit and push."}),e.jsx(o.PreviewLine,{children:"Use them to stop bad commits early - lint, tests, formatting, secret checks."})]}),s&&e.jsxs(o.Content,{children:[e.jsxs(o.Section,{children:[e.jsxs(o.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"What are Git hooks"})]}),e.jsx(o.Para,{children:"A Git hook is a script that Git runs automatically when a specific action happens. Example actions: before commit, after commit, before push, commit message validation."}),e.jsxs(o.Note,{children:[e.jsx(c,{}),e.jsxs("div",{children:[e.jsx(o.NoteTitle,{children:"Beginner mental model"}),e.jsx(o.NoteText,{children:'Hooks are like "automatic gatekeepers". If rules fail, they block the action. This prevents broken code from entering history.'})]})]})]}),e.jsxs(o.Section,{children:[e.jsxs(o.SectionHead,{children:[e.jsx(u,{}),e.jsx("h3",{children:"Common hooks you will use"})]}),e.jsxs(o.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"pre-commit"})," - run checks before commit is created"]}),e.jsxs("li",{children:[e.jsx("b",{children:"commit-msg"})," - validate commit message rules"]}),e.jsxs("li",{children:[e.jsx("b",{children:"pre-push"})," - run checks before pushing to remote"]})]}),e.jsxs(o.Example,{children:[e.jsx(o.ExampleTitle,{children:"Why hooks matter"}),e.jsxs(o.Bullets,{children:[e.jsx("li",{children:"Catch lint and formatting issues early"}),e.jsx("li",{children:"Stop commits that break tests"}),e.jsx("li",{children:"Prevent accidental secrets like API keys"}),e.jsx("li",{children:"Keep team standards consistent"})]})]})]}),e.jsxs(o.Section,{children:[e.jsxs(o.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Where hooks live"})]}),e.jsx(o.Para,{children:'Git hooks live inside your repo at ".git/hooks". These files are local to your machine. That means hooks are not shared automatically when you push code to GitHub.'}),e.jsxs(o.Warn,{children:[e.jsx(b,{}),e.jsxs("div",{children:[e.jsx(o.WarnTitle,{children:"Important limitation"}),e.jsx(o.WarnText,{children:'".git/hooks" is not versioned. If you want the whole team to use hooks, keep hook scripts in a tracked folder and install them with a setup script.'})]})]})]}),e.jsxs(o.Section,{children:[e.jsxs(o.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Practical hook rules (real world)"})]}),e.jsxs(o.Bullets,{children:[e.jsx("li",{children:"pre-commit - run lint, formatting, type checks"}),e.jsx("li",{children:"pre-push - run full test suite or critical tests"}),e.jsx("li",{children:"commit-msg - enforce message format, ticket id, minimum length"}),e.jsx("li",{children:"security - block common secret patterns"})]}),e.jsxs(o.Example,{children:[e.jsx(o.ExampleTitle,{children:"Performance tip"}),e.jsx(o.Para,{children:"Keep pre-commit fast. People commit often. Run light checks here. Keep heavy checks in pre-push or CI."})]})]}),e.jsxs(o.Section,{children:[e.jsxs(o.SectionHead,{children:[e.jsx(j,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(o.SnippetGrid,{children:p.map(i=>{const t=d===i.key;return e.jsxs(o.SnippetCard,{children:[e.jsxs(o.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(o.SnippetTitle,{children:i.title}),e.jsx(o.SnippetHint,{children:i.hint})]}),e.jsxs(o.CopyBtn,{type:"button",onClick:()=>x(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(c,{}):e.jsx(y,{}),t?"Copied":"Copy"]})]}),e.jsx(o.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(o.FooterNote,{children:"Hooks catch problems early, but CI is still the final guard. Use hooks for fast feedback and CI for full reliability."})]})]})};export{S as default};

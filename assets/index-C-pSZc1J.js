@@ -1,4 +1,4 @@
-import{c as o,r as a,j as e,H as h,a as u,b as g,t as m,i as l,I as v,m as b,k as y,d as f,p as j,y as k,f as C,x as S,q as w}from"./index-ChJ3UoLf.js";const r={Wrapper:o.div`
+import{c as o,r as n,j as e,u as h,a as g,b as f,d as u,i as l,v as b,k as v,m as j,s as y,p as c,q as w}from"./index-J2ZlUx8T.js";const r={Wrapper:o.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
@@ -275,42 +275,34 @@ import{c as o,r as a,j as e,H as h,a as u,b as g,t as m,i as l,I as v,m as b,k a
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `},z=()=>{const[s,c]=a.useState(!0),[d,n]=a.useState(""),p=a.useMemo(()=>[{key:"pipelineStages",title:"Typical pipeline stages",hint:"Concept only",code:`# CI and CD pipeline usually looks like:
+    `},S=()=>{const[s,d]=n.useState(!0),[m,a]=n.useState(""),x=n.useMemo(()=>[{key:"ff",title:"Fast-forward merge",hint:"No merge commit - just move pointer",code:`# If main has not moved, Git can fast-forward
+git checkout main
+git merge feature/login
 
-# 1) Checkout code
-# 2) Install dependencies
-# 3) Lint and typecheck
-# 4) Run tests
-# 5) Build artifacts
-# 6) Security scans (optional but common)
-# 7) Deploy to staging
-# 8) Smoke tests
-# 9) Deploy to production`},{key:"buildArtifact",title:"Build artifacts idea",hint:"What CD deploys",code:`# Artifact is the output of build stage
-# Examples:
-# - dist folder for React apps
-# - Docker image tag like myapp:1.2.0
-# - compiled binary for Go or Rust
-# - zip package for serverless functions`},{key:"rollback",title:"Rollback idea",hint:"Production safety",code:`# A good CD setup supports rollback
-# Examples:
-# - deploy previous Docker image tag
-# - switch load balancer traffic to old version
-# - revert release in Kubernetes
-# - redeploy previous build artifact`},{key:"envs",title:"Environments",hint:"dev, staging, prod",code:`# Common flow:
-# dev - local machine
-# staging - production like testing environment
-# prod - real users
+# Result: main now points to the same commit as feature/login`},{key:"noff",title:"Merge commit",hint:"Keep branch history visible",code:`# Force a merge commit even if fast-forward is possible
+git checkout main
+git merge --no-ff feature/login
 
-# Good practice:
-# same build artifact should go through staging then prod`},{key:"secrets",title:"Secrets handling",hint:"Never hardcode",code:`# Secrets belong in CI secret store
-# Examples:
-# - API keys
-# - deploy tokens
-# - cloud credentials
+# Result: a new merge commit with 2 parents`},{key:"conflicts",title:"Merge conflict flow",hint:"Resolve and finish merge",code:`git checkout main
+git merge feature/login
 
-# Never commit secrets in code or .env in repo`},{key:"qualityGates",title:"Quality gates",hint:"Block bad builds",code:`# Quality gates are rules that must pass
-# Examples:
-# - lint must pass
-# - tests must pass
-# - coverage minimum
-# - security scan no high vulnerabilities
-# - formatting check`}],[]),x=async(i,t)=>{try{await navigator.clipboard.writeText(i),n(t),window.setTimeout(()=>n(""),900)}catch{n("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>c(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"CI CD",e.jsx(r.Badge,{children:"Automation from commit to deploy"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:s?e.jsx(u,{}):e.jsx(g,{})})]}),!s&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"CI builds and tests your code automatically. CD deploys it automatically."}),e.jsx(r.PreviewLine,{children:"Learn pipeline stages, artifacts, environments, and safe deployment habits."})]}),s&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(m,{}),e.jsx("h3",{children:"What is CI"})]}),e.jsx(r.Para,{children:"CI means Continuous Integration. Every time code is pushed, an automated pipeline runs to make sure the code is healthy. Typical CI jobs are linting, tests, type checks, and build."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"CI is like an automatic reviewer. It runs the same checks every time so humans do not miss mistakes."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"What is CD"})]}),e.jsx(r.Para,{children:"CD usually means Continuous Delivery or Continuous Deployment. Both automate the deployment steps, but the difference is who clicks the final button."}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Continuous Delivery"})," - deployment is always ready, but production release may need manual approval"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Continuous Deployment"})," - every successful pipeline automatically goes to production"]})]}),e.jsxs(r.Warn,{children:[e.jsx(b,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Real world note"}),e.jsx(r.WarnText,{children:"Many teams start with Continuous Delivery and add approvals for production. Fully automatic production is possible, but requires strong testing and monitoring."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Pipeline stages (typical)"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Checkout code"}),e.jsx("li",{children:"Install dependencies"}),e.jsx("li",{children:"Lint and formatting checks"}),e.jsx("li",{children:"Run tests"}),e.jsx("li",{children:"Build artifacts"}),e.jsx("li",{children:"Deploy to staging"}),e.jsx("li",{children:"Smoke test"}),e.jsx("li",{children:"Deploy to production"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Smoke test meaning"}),e.jsx(r.Para,{children:"A smoke test is a quick check to ensure the deployment is not totally broken. Example: call health endpoint and check status 200."})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"Branch strategy example"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"PR to main triggers CI only"}),e.jsx("li",{children:"Merge to main triggers CI and deploy to staging"}),e.jsx("li",{children:"Tag a release triggers production deployment"})]}),e.jsxs(r.Note,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Why tags are useful"}),e.jsx(r.NoteText,{children:"A tag is a stable point in history. Production deployments often use tags so you can identify exactly what version is running."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Secrets and configuration"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Secrets should be stored in CI secret manager"}),e.jsx("li",{children:"Never commit credentials in repository"}),e.jsx("li",{children:"Use environment based configuration - staging and production"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Common secrets"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"AWS access keys"}),e.jsx("li",{children:"GitHub deploy tokens"}),e.jsx("li",{children:"Docker registry credentials"}),e.jsx("li",{children:"Database connection strings"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(C,{}),e.jsx("h3",{children:"Monitoring and rollback"})]}),e.jsx(r.Para,{children:"CD without monitoring is risky. After deployment, you should track errors, latency, and traffic. Rollback should be fast and predictable."}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Keep previous artifacts available"}),e.jsx("li",{children:"Use health checks"}),e.jsx("li",{children:"Enable fast rollback path"}),e.jsx("li",{children:"Prefer gradual rollout for big changes"})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(S,{}),e.jsx("h3",{children:"Cheat sheet playground"})]}),e.jsx(r.SnippetGrid,{children:p.map(i=>{const t=d===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>x(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(l,{}):e.jsx(w,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"CI catches mistakes early. CD makes releases repeatable. Together they reduce manual work and increase reliability."})]})]})};export{z as default};
+# If conflict happens
+git status
+# fix files manually
+
+git add .
+git commit
+
+# If you want to cancel merge
+git merge --abort`},{key:"squash",title:"Squash merge",hint:"Make one commit out of many",code:`# Combine feature branch changes into 1 commit on main
+git checkout main
+git merge --squash feature/login
+git commit -m "Login feature"
+
+# Note: This is not a real merge commit`},{key:"prMethods",title:"PR merge methods concept",hint:"GitHub merge options",code:`# Merge commit - keeps all commits, adds merge commit
+# Squash and merge - makes 1 commit on main
+# Rebase and merge - replays commits, no merge commit`},{key:"recover",title:"Undo a bad merge",hint:"Two common ways",code:`# If merge not pushed and you want to discard it
+git reset --hard ORIG_HEAD
+
+# If merge was pushed, use revert (safe)
+git revert -m 1 <merge-commit-hash>`}],[]),p=async(i,t)=>{try{await navigator.clipboard.writeText(i),a(t),window.setTimeout(()=>a(""),900)}catch{a("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>d(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"Merge",e.jsx(r.Badge,{children:"Combine branches safely"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:s?e.jsx(g,{}):e.jsx(f,{})})]}),!s&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Merge combines histories. It keeps the story of how branches actually happened."}),e.jsx(r.PreviewLine,{children:"Learn fast-forward, merge commits, squash merge, conflicts, and safe undo."})]}),s&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(u,{}),e.jsx("h3",{children:"What merge does"})]}),e.jsx(r.Para,{children:"Merge combines changes from one branch into another. You usually merge a feature branch into main. Git tries to bring both histories together without losing commits."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:'Merge is like saying "take everything from feature branch and add it into main". Sometimes it just moves the pointer, sometimes it creates a special merge commit.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(b,{}),e.jsx("h3",{children:"Fast-forward vs merge commit"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Fast-forward merge"})," - main did not move, so Git just moves main pointer forward"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Merge commit"})," - both branches moved, so Git creates a new commit that has two parents"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Simple example"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Main is at commit A"}),e.jsx("li",{children:"Feature branch adds commits B and C"}),e.jsx("li",{children:"If main stayed at A, merge can fast-forward to C"}),e.jsx("li",{children:"If main also got commits, Git creates a merge commit"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Merge strategies you will see"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Default merge"})," - Git decides fast-forward or merge commit based on history"]}),e.jsxs("li",{children:[e.jsx("b",{children:"--no-ff"})," - always create a merge commit (makes branch boundaries visible)"]}),e.jsxs("li",{children:[e.jsx("b",{children:"--squash"})," - combine all feature commits into one commit on main (not a real merge commit)"]})]}),e.jsxs(r.Warn,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Squash merge note"}),e.jsx(r.WarnText,{children:"Squash makes history clean, but it loses individual commit history from the feature branch on main. Great for small features. Not great if you need detailed commit trail."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"GitHub PR merge methods"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Merge commit"})," - keeps all commits and adds a merge commit"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Squash and merge"})," - makes one commit on main"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Rebase and merge"})," - replays commits, no merge commit, history is linear"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Quick selection rule"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Use merge commit when you want to preserve branch context"}),e.jsx("li",{children:"Use squash when you want one clean commit per PR"}),e.jsx("li",{children:"Use rebase and merge when team prefers linear history"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(c,{}),e.jsx("h3",{children:"Merge conflicts - what and why"})]}),e.jsx(r.Para,{children:"A merge conflict happens when Git cannot automatically combine changes. Usually both branches edited the same lines in the same file. Git stops and asks you to decide the final content."}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Conflict handling flow"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Run merge"}),e.jsx("li",{children:"Git shows conflicted files"}),e.jsx("li",{children:"Edit files to correct final version"}),e.jsx("li",{children:"git add ."}),e.jsx("li",{children:"git commit to finish merge"})]})]}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Helpful tip"}),e.jsx(r.NoteText,{children:"Use git status to see exactly which files are conflicted. Solve one file at a time. Keep changes small."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(c,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:x.map(i=>{const t=m===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>p(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(l,{}):e.jsx(w,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"Merge is the safest default for teams because it does not rewrite history. Rebase is cleaner, but merge is honest."})]})]})};export{S as default};
