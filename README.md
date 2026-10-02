@@ -2,7 +2,7 @@
 
 Practical React notes for Git, containers, CI/CD, AWS, cloud infrastructure, and production workflows.
 
-![DevOps and Cloud Core Notes screenshot](screenshot.png)
+![DevOps and Cloud Core Notes screenshot](./screenshot.jpg)
 
 ## Features
 
