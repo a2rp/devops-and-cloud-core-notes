@@ -1,4 +1,4 @@
-import{c as o,r as a,j as e,H as h,a as u,b as g,t as m,i as l,I as v,m as b,k as y,d as f,p as j,y as k,f as C,x as S,q as w}from"./index-J2ZlUx8T.js";const r={Wrapper:o.div`
+import{d as o,r as n,j as e,s as g,a as b,b as u,c as f,i as c,k as v,m as l,p as d,t as j,o as y,q as w}from"./index-BlHSuHAL.js";const r={Wrapper:o.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
@@ -275,42 +275,48 @@ import{c as o,r as a,j as e,H as h,a as u,b as g,t as m,i as l,I as v,m as b,k a
         color: var(--color-text-secondary);
         font-size: 13px;
         line-height: 1.55;
-    `},z=()=>{const[s,c]=a.useState(!0),[d,n]=a.useState(""),p=a.useMemo(()=>[{key:"pipelineStages",title:"Typical pipeline stages",hint:"Concept only",code:`# CI and CD pipeline usually looks like:
+    `},C=()=>{const[a,p]=n.useState(!0),[x,s]=n.useState(""),h=n.useMemo(()=>[{key:"basic",title:"Basic rebase",hint:"Move your commits onto a new base",code:`# You are on feature branch
+git checkout feature/login
 
-# 1) Checkout code
-# 2) Install dependencies
-# 3) Lint and typecheck
-# 4) Run tests
-# 5) Build artifacts
-# 6) Security scans (optional but common)
-# 7) Deploy to staging
-# 8) Smoke tests
-# 9) Deploy to production`},{key:"buildArtifact",title:"Build artifacts idea",hint:"What CD deploys",code:`# Artifact is the output of build stage
-# Examples:
-# - dist folder for React apps
-# - Docker image tag like myapp:1.2.0
-# - compiled binary for Go or Rust
-# - zip package for serverless functions`},{key:"rollback",title:"Rollback idea",hint:"Production safety",code:`# A good CD setup supports rollback
-# Examples:
-# - deploy previous Docker image tag
-# - switch load balancer traffic to old version
-# - revert release in Kubernetes
-# - redeploy previous build artifact`},{key:"envs",title:"Environments",hint:"dev, staging, prod",code:`# Common flow:
-# dev - local machine
-# staging - production like testing environment
-# prod - real users
+# Update your feature branch with latest main using rebase
+git fetch origin
+git rebase origin/main
 
-# Good practice:
-# same build artifact should go through staging then prod`},{key:"secrets",title:"Secrets handling",hint:"Never hardcode",code:`# Secrets belong in CI secret store
-# Examples:
-# - API keys
-# - deploy tokens
-# - cloud credentials
+# Push after rebase (history changed)
+git push --force-with-lease`},{key:"interactive",title:"Interactive rebase",hint:"Clean up commit history before PR",code:`# Rebase last 5 commits interactively
+git rebase -i HEAD~5
 
-# Never commit secrets in code or .env in repo`},{key:"qualityGates",title:"Quality gates",hint:"Block bad builds",code:`# Quality gates are rules that must pass
-# Examples:
-# - lint must pass
-# - tests must pass
-# - coverage minimum
-# - security scan no high vulnerabilities
-# - formatting check`}],[]),x=async(i,t)=>{try{await navigator.clipboard.writeText(i),n(t),window.setTimeout(()=>n(""),900)}catch{n("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>c(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(h,{}),"CI CD",e.jsx(r.Badge,{children:"Automation from commit to deploy"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:s?e.jsx(u,{}):e.jsx(g,{})})]}),!s&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"CI builds and tests your code automatically. CD deploys it automatically."}),e.jsx(r.PreviewLine,{children:"Learn pipeline stages, artifacts, environments, and safe deployment habits."})]}),s&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(m,{}),e.jsx("h3",{children:"What is CI"})]}),e.jsx(r.Para,{children:"CI means Continuous Integration. Every time code is pushed, an automated pipeline runs to make sure the code is healthy. Typical CI jobs are linting, tests, type checks, and build."}),e.jsxs(r.Note,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"CI is like an automatic reviewer. It runs the same checks every time so humans do not miss mistakes."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"What is CD"})]}),e.jsx(r.Para,{children:"CD usually means Continuous Delivery or Continuous Deployment. Both automate the deployment steps, but the difference is who clicks the final button."}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"Continuous Delivery"})," - deployment is always ready, but production release may need manual approval"]}),e.jsxs("li",{children:[e.jsx("b",{children:"Continuous Deployment"})," - every successful pipeline automatically goes to production"]})]}),e.jsxs(r.Warn,{children:[e.jsx(b,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Real world note"}),e.jsx(r.WarnText,{children:"Many teams start with Continuous Delivery and add approvals for production. Fully automatic production is possible, but requires strong testing and monitoring."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Pipeline stages (typical)"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Checkout code"}),e.jsx("li",{children:"Install dependencies"}),e.jsx("li",{children:"Lint and formatting checks"}),e.jsx("li",{children:"Run tests"}),e.jsx("li",{children:"Build artifacts"}),e.jsx("li",{children:"Deploy to staging"}),e.jsx("li",{children:"Smoke test"}),e.jsx("li",{children:"Deploy to production"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Smoke test meaning"}),e.jsx(r.Para,{children:"A smoke test is a quick check to ensure the deployment is not totally broken. Example: call health endpoint and check status 200."})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"Branch strategy example"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"PR to main triggers CI only"}),e.jsx("li",{children:"Merge to main triggers CI and deploy to staging"}),e.jsx("li",{children:"Tag a release triggers production deployment"})]}),e.jsxs(r.Note,{children:[e.jsx(j,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Why tags are useful"}),e.jsx(r.NoteText,{children:"A tag is a stable point in history. Production deployments often use tags so you can identify exactly what version is running."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(k,{}),e.jsx("h3",{children:"Secrets and configuration"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Secrets should be stored in CI secret manager"}),e.jsx("li",{children:"Never commit credentials in repository"}),e.jsx("li",{children:"Use environment based configuration - staging and production"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Common secrets"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"AWS access keys"}),e.jsx("li",{children:"GitHub deploy tokens"}),e.jsx("li",{children:"Docker registry credentials"}),e.jsx("li",{children:"Database connection strings"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(C,{}),e.jsx("h3",{children:"Monitoring and rollback"})]}),e.jsx(r.Para,{children:"CD without monitoring is risky. After deployment, you should track errors, latency, and traffic. Rollback should be fast and predictable."}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Keep previous artifacts available"}),e.jsx("li",{children:"Use health checks"}),e.jsx("li",{children:"Enable fast rollback path"}),e.jsx("li",{children:"Prefer gradual rollout for big changes"})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(S,{}),e.jsx("h3",{children:"Cheat sheet playground"})]}),e.jsx(r.SnippetGrid,{children:p.map(i=>{const t=d===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>x(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(l,{}):e.jsx(w,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"CI catches mistakes early. CD makes releases repeatable. Together they reduce manual work and increase reliability."})]})]})};export{z as default};
+# In editor:
+# pick   keep commit
+# reword change commit message
+# squash combine with previous commit
+# fixup  combine and drop message`},{key:"conflicts",title:"Rebase conflict flow",hint:"Resolve conflicts safely",code:`# During rebase, if conflict happens:
+git status
+
+# Fix conflicts in files, then:
+git add .
+
+# Continue rebase
+git rebase --continue
+
+# If you want to stop and go back:
+git rebase --abort`},{key:"onto",title:"Rebase onto",hint:"Move a branch to a different base",code:`# Move feature commits from old-base to new-base
+git rebase --onto new-base old-base feature/login
+
+# Example idea:
+# feature/login was based on main-old
+# now you want it based on main-new`},{key:"autosquash",title:"Fixup commits with autosquash",hint:"Great for review feedback",code:`# Create a fixup commit for an earlier commit
+git commit --fixup <commit-hash>
+
+# Auto squash fixups during interactive rebase
+git rebase -i --autosquash origin/main`},{key:"recover",title:"Recover after bad rebase",hint:"Reflog rescue",code:`# Find previous HEAD before rebase
+git reflog
+
+# Reset back to safe point
+git reset --hard HEAD@{3}`}],[]),m=async(i,t)=>{try{await navigator.clipboard.writeText(i),s(t),window.setTimeout(()=>s(""),900)}catch{s("")}};return e.jsxs(r.Wrapper,{children:[e.jsxs(r.Header,{onClick:()=>p(i=>!i),role:"button",tabIndex:0,children:[e.jsxs(r.Title,{children:[e.jsx(g,{}),"Rebase",e.jsx(r.Badge,{children:"Clean history - same code"})]}),e.jsx(r.Toggle,{"aria-hidden":"true",children:a?e.jsx(b,{}):e.jsx(u,{})})]}),!a&&e.jsxs(r.Preview,{children:[e.jsx(r.PreviewLine,{children:"Rebase takes your commits and replays them on top of another commit."}),e.jsx(r.PreviewLine,{children:"It is amazing for clean PRs, but dangerous on shared branches."})]}),a&&e.jsxs(r.Content,{children:[e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(f,{}),e.jsx("h3",{children:"What rebase does"})]}),e.jsx(r.Para,{children:"Rebase changes the base of your branch. It takes the commits from your branch and applies them again on top of a new base commit. The code ends up similar, but the commit hashes change because history is rewritten."}),e.jsxs(r.Note,{children:[e.jsx(c,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Beginner mental model"}),e.jsx(r.NoteText,{children:"Imagine you wrote 3 commits on feature branch. Main branch moved ahead. Rebase copies your 3 commits and attaches them to the new tip of main."})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(v,{}),e.jsx("h3",{children:"Merge vs rebase"})]}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"merge"})," - keeps history as it happened, creates a merge commit (or fast-forward)"]}),e.jsxs("li",{children:[e.jsx("b",{children:"rebase"})," - rewrites your branch history into a straight line, no merge commit"]})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"When rebase is preferred"}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Before creating a PR - clean linear commits"}),e.jsx("li",{children:"While working alone on a feature branch - no one else depends on your history"})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(l,{}),e.jsx("h3",{children:"The golden rule"})]}),e.jsxs(r.Warn,{children:[e.jsx(l,{}),e.jsxs("div",{children:[e.jsx(r.WarnTitle,{children:"Do not rebase shared branches"}),e.jsx(r.WarnText,{children:"If others pulled your branch, rebasing changes commit hashes and makes their history messy. Use merge or coordinate carefully."})]})]}),e.jsxs(r.Note,{children:[e.jsx(d,{}),e.jsxs("div",{children:[e.jsx(r.NoteTitle,{children:"Safe push after rebase"}),e.jsx(r.NoteText,{children:'Use "git push --force-with-lease" instead of "git push --force". It refuses to overwrite if remote changed unexpectedly.'})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(j,{}),e.jsx("h3",{children:"Interactive rebase - clean commits"})]}),e.jsx(r.Para,{children:"Interactive rebase lets you edit your last N commits. You can squash small commits, fix messages, and reorder commits. This is perfect before opening a PR."}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Common actions in rebase editor"}),e.jsxs(r.Bullets,{children:[e.jsxs("li",{children:[e.jsx("b",{children:"pick"})," - keep commit"]}),e.jsxs("li",{children:[e.jsx("b",{children:"reword"})," - change commit message"]}),e.jsxs("li",{children:[e.jsx("b",{children:"squash"})," - merge commit into previous and keep message"]}),e.jsxs("li",{children:[e.jsx("b",{children:"fixup"})," - merge commit into previous and drop message"]})]})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(y,{}),e.jsx("h3",{children:"Conflict handling flow"})]}),e.jsxs(r.Bullets,{children:[e.jsx("li",{children:"Rebase stops at the commit that caused conflict"}),e.jsx("li",{children:"You fix files, stage them, then continue"}),e.jsx("li",{children:"If things go wrong, abort and you are back to previous state"})]}),e.jsxs(r.Example,{children:[e.jsx(r.ExampleTitle,{children:"Commands during conflict"}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:`git status
+# fix conflicts in files
+git add .
+git rebase --continue
+
+# to cancel
+git rebase --abort`})})]})]}),e.jsxs(r.Section,{children:[e.jsxs(r.SectionHead,{children:[e.jsx(d,{}),e.jsx("h3",{children:"Command playground"})]}),e.jsx(r.SnippetGrid,{children:h.map(i=>{const t=x===i.key;return e.jsxs(r.SnippetCard,{children:[e.jsxs(r.SnippetTop,{children:[e.jsxs("div",{children:[e.jsx(r.SnippetTitle,{children:i.title}),e.jsx(r.SnippetHint,{children:i.hint})]}),e.jsxs(r.CopyBtn,{type:"button",onClick:()=>m(i.code,i.key),title:t?"Copied":"Copy",children:[t?e.jsx(c,{}):e.jsx(w,{}),t?"Copied":"Copy"]})]}),e.jsx(r.CodeBlock,{children:e.jsx("pre",{children:i.code})})]},i.key)})})]}),e.jsx(r.FooterNote,{children:"Rebase is like editing the story of your branch. It makes history clean, but you must use it responsibly."})]})]})};export{C as default};

@@ -1,4 +1,4 @@
-import{c as r,r as n,j as e,p as h,a as m,b as g,t as f,i as c,w as u,x as v,m as b,y as k,z as j,q as y}from"./index-J2ZlUx8T.js";const o={Wrapper:r.div`
+import{d as r,r as n,j as e,p as h,a as m,b as g,t as f,i as c,w as u,x as v,m as b,y as k,z as j,q as y}from"./index-BlHSuHAL.js";const o={Wrapper:r.div`
         margin-bottom: 10px;
         border: 1px solid var(--color-border);
         border-radius: 14px;
