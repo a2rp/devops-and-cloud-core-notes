@@ -1,4 +1,4 @@
-﻿// src/topics/s3/index.jsx
+// src/topics/s3/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -70,7 +70,8 @@ const S3 = () => {
                 key: "lifecycle",
                 title: "Lifecycle policies",
                 hint: "Auto move or delete old files",
-                code: `# Lifecycle policy examples:
+                code: `# Caution: verify scope and retention before enabling automatic deletion.
+# Lifecycle policy examples:
 # - move logs to cheaper storage after 30 days
 # - delete temporary uploads after 7 days
 # - expire old backups after 180 days`,
@@ -127,6 +128,13 @@ const S3 = () => {
         <Styled.Wrapper>
             <Styled.Header
                 onClick={() => setOpen((v) => !v)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((v) => !v);
+                    }
+                }}
+                aria-expanded={open}
                 role="button"
                 tabIndex={0}
             >

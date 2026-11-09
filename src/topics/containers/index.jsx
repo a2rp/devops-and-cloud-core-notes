@@ -1,4 +1,4 @@
-﻿// src/topics/containers/index.jsx
+// src/topics/containers/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -104,6 +104,7 @@ docker run -it --rm --network app-net alpine sh
                 title: "Cleanup commands",
                 hint: "Remove unused stuff safely",
                 code: `# Remove stopped containers
+# Review the prompt; this permanently removes stopped containers.
 docker container prune
 
 # Remove unused images
@@ -129,6 +130,13 @@ docker network prune`,
         <Styled.Wrapper>
             <Styled.Header
                 onClick={() => setOpen((v) => !v)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((v) => !v);
+                    }
+                }}
+                aria-expanded={open}
                 role="button"
                 tabIndex={0}
             >

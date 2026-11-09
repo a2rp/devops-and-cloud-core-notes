@@ -1,4 +1,4 @@
-﻿// src/topics/merge/index.jsx
+// src/topics/merge/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -82,6 +82,7 @@ git commit -m "Login feature"
                 title: "Undo a bad merge",
                 hint: "Two common ways",
                 code: `# If merge not pushed and you want to discard it
+# WARNING: --hard discards uncommitted changes; save or stash work first.
 git reset --hard ORIG_HEAD
 
 # If merge was pushed, use revert (safe)
@@ -104,6 +105,13 @@ git revert -m 1 <merge-commit-hash>`,
         <Styled.Wrapper>
             <Styled.Header
                 onClick={() => setOpen((v) => !v)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((v) => !v);
+                    }
+                }}
+                aria-expanded={open}
                 role="button"
                 tabIndex={0}
             >

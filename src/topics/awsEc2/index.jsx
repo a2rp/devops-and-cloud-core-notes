@@ -1,4 +1,4 @@
-﻿// src/topics/awsEc2/index.jsx
+// src/topics/awsEc2/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -129,6 +129,13 @@ echo "<h1>Hello from EC2</h1>" > /var/www/html/index.html`,
         <Styled.Wrapper>
             <Styled.Header
                 onClick={() => setOpen((v) => !v)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((v) => !v);
+                    }
+                }}
+                aria-expanded={open}
                 role="button"
                 tabIndex={0}
             >

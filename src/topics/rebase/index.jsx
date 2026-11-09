@@ -1,4 +1,4 @@
-﻿// src/topics/rebase/index.jsx
+// src/topics/rebase/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -93,6 +93,7 @@ git rebase -i --autosquash origin/main`,
 git reflog
 
 # Reset back to safe point
+# WARNING: --hard discards uncommitted changes; save or stash work first.
 git reset --hard HEAD@{3}`,
             },
         ];
@@ -112,6 +113,13 @@ git reset --hard HEAD@{3}`,
         <Styled.Wrapper>
             <Styled.Header
                 onClick={() => setOpen((v) => !v)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((v) => !v);
+                    }
+                }}
+                aria-expanded={open}
                 role="button"
                 tabIndex={0}
             >

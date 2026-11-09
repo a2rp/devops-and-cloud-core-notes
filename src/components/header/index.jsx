@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiCloud, FiLayers, FiMoon, FiSun } from "react-icons/fi";
 import { Styled } from "./styled";
 
@@ -6,12 +6,15 @@ const THEME_LS_KEY = "devops-and-cloud-core-notes-theme";
 const logo = `${import.meta.env.BASE_URL}logo.png`;
 
 const Header = () => {
-    const [theme, setTheme] = useState("dark");
-
-    useEffect(() => {
-        const storedTheme = localStorage.getItem(THEME_LS_KEY) || "dark";
-        setTheme(storedTheme);
-    }, []);
+    const [theme, setTheme] = useState(() => {
+        try {
+            return localStorage.getItem(THEME_LS_KEY) === "light"
+                ? "light"
+                : "dark";
+        } catch {
+            return "dark";
+        }
+    });
 
     useEffect(() => {
         if (theme === "light") {
@@ -20,13 +23,14 @@ const Header = () => {
             document.documentElement.removeAttribute("data-theme");
         }
 
-        localStorage.setItem(THEME_LS_KEY, theme);
+        try {
+            localStorage.setItem(THEME_LS_KEY, theme);
+        } catch {
+            // Theme toggling still works for this session without storage.
+        }
     }, [theme]);
 
-    const nextTheme = useMemo(
-        () => (theme === "light" ? "dark" : "light"),
-        [theme],
-    );
+    const nextTheme = theme === "light" ? "dark" : "light";
 
     return (
         <Styled.Wrapper>

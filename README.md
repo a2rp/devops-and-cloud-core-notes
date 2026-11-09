@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-Build and deploy to GitHub Pages:
+Build and deploy to GitHub Pages. The deploy script also creates the `404.html` route fallback so direct project-page links load correctly:
 
 ```bash
 npm run build

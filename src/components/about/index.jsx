@@ -15,7 +15,18 @@ const AboutDevOpsCloud = () => {
 
     return (
         <Styled.Wrapper>
-            <Styled.Header onClick={() => setOpen(!open)}>
+            <Styled.Header
+                onClick={() => setOpen((value) => !value)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((value) => !value);
+                    }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-expanded={open}
+            >
                 <Styled.Title>
                     <FiCloud />
                     DevOps and Cloud Core Notes

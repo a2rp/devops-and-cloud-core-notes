@@ -1,4 +1,4 @@
-﻿// src/topics/gitDeep/index.jsx
+// src/topics/gitDeep/index.jsx
 import React, { useMemo, useState } from "react";
 import { Styled } from "./styled";
 import {
@@ -70,6 +70,7 @@ git reflog
 
 # Recover a lost commit by checking out or resetting
 git checkout <hash>
+# WARNING: --hard discards uncommitted changes; save or stash work first.
 git reset --hard <hash>`,
             },
             {
@@ -79,6 +80,7 @@ git reset --hard <hash>`,
                 code: `# Move HEAD and branch pointer (can rewrite history)
 git reset --soft HEAD~1
 git reset --mixed HEAD~1
+# WARNING: --hard discards uncommitted changes; save or stash work first.
 git reset --hard HEAD~1
 
 # Create a new commit that undoes changes (safe for shared branches)
@@ -113,6 +115,13 @@ git cherry-pick <commit-hash>`,
         <Styled.Wrapper>
             <Styled.Header
                 onClick={() => setOpen((v) => !v)}
+                onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setOpen((v) => !v);
+                    }
+                }}
+                aria-expanded={open}
                 role="button"
                 tabIndex={0}
             >
@@ -324,6 +333,7 @@ git commit -m "Update file.txt"`}
 git reflog
 
 # Reset back to a good state
+# WARNING: --hard discards uncommitted changes; save or stash work first.
 git reset --hard HEAD@{3}`}
                                 </pre>
                             </Styled.CodeBlock>
