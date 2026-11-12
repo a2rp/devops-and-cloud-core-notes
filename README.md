@@ -1,6 +1,6 @@
 # DevOps and Cloud Core Notes
 
-Practical React notes for Git, containers, CI/CD, AWS, cloud infrastructure, and production workflows.
+Practical study notes for Git, containers, CI/CD, AWS, cloud infrastructure, and production workflows.
 
 ![DevOps and Cloud Core Notes screenshot](./screenshot.jpg)
 
